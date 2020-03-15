@@ -14,9 +14,8 @@ const getRandomChinese = async (length) => {
             result += sign
           })
         }
-      
-        console.log(result)
-        return result
+  
+        return result;
       }
       
       
