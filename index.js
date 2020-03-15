@@ -1,17 +1,22 @@
- async function getRandomChinese(length) {
-  const n = 5;     
-  let result = '';
-  while(lenth>0) {
-   let str = '';
-   const sign = Date.now().toString();
+const getRandomChinese = async (length) => {
+        let result = '';
       
-        for (let i = sign.lenth - n; i < sign.length; i++){
-         str += sign[i];
+        for (let i = 0; i < length; i++){
+          const randomSign = new Promise(resolve => {
+            setTimeout(() => {
+              let sign = String(Date.now())
+              sign = sign.substring(sign.length - 4)
+              resolve(String.fromCharCode(sign));
+            }, 50);
+          });
+      
+          await randomSign.then((sign) => {
+            result += sign
+          })
         }
-   result += await chinese(str);
-   lenth--;
-        }
-        return result;
+      
+        console.log(result)
+        return result
       }
       
       
