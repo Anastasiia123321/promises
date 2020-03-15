@@ -14,14 +14,13 @@ const getRandomChinese = async (length) => {
             result += sign
           })
         }
-  
         return result;
       }
       
       
       const startConvertation = async () => {
         const anotherResult = document.querySelector('.result');
-        const length = Number(prompt('Введіть число', 4)); 
+        const length = Number(prompt('Введіть число', 4));
         
-        anotherResult.innerHTML += `Result  => ${await getRandomChinese(length)}`
+        anotherResult.innerHTML += `Result  => ${await getRandomChinese(length)}
       }
