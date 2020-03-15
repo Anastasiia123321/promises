@@ -5,8 +5,7 @@ const getRandomChinese = async (length) => {
           const randomSign = new Promise(resolve => {
             setTimeout(() => {
               let sign = String(Date.now())
-              const number = 4;
-              sign = sign.substring(sign.length - number)
+              sign = sign.substring(sign.length - 4)
               resolve(String.fromCharCode(sign));
             }, 50);
           });
@@ -22,7 +21,7 @@ const getRandomChinese = async (length) => {
       
       const startConvertation = async () => {
         const anotherResult = document.querySelector('.result');
-        const length = Number(prompt('Введіть число', number)) 
+        const length = Number(prompt('Введіть число', 4)) 
         
         anotherResult.innerHTML += `Result  => ${await getRandomChinese(length)}`
       }
